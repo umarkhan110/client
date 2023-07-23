@@ -7,9 +7,9 @@ const Login = () => {
     <div className="arvind_widget_banner app-view-screen">
     <div className="">
         <div className="container">
-            <div className="row">
-                <div className="col-xs-12">
-                    <div className="arvind_widget_contact-view arvind_widget_login-form">
+            <div className="row text-center justify-content-center">
+                <div className="col-md-5 text-center">
+                    {/* <div className="arvind_widget_contact-view arvind_widget_login-form">
                         <div className="row arvind_widget_fb_btn">
                             <script async defer crossorigin="anonymous" src="../../connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=1534419386710031&autoLogAppEvents=1"></script>
                             <button type="button" className="arvind_widget_facebookLoginBtn" onclick="fb_login();">
@@ -60,7 +60,50 @@ const Login = () => {
                                     <br />
                                         </form>
 
-                    </div>                      
+                    </div>                       */}
+
+
+
+<div className=" my-5">
+      <div className="screen">
+        <div className="screen__content">
+            <h2 className='float-left ml-5 mt-5'>Login Here</h2>
+          <form className="login">
+            <div className="login__field">
+            <i class="fa fa-user" aria-hidden="true"></i>
+                          <input type="text" className="login__input" placeholder="User name / Email" />
+            </div>
+            <div className="login__field">
+            <i class="fa fa-key" aria-hidden="true"></i>
+              <input type="password" className="login__input" placeholder="Password" />
+            </div>
+            <button className="button login__submit">
+              <span className="button__text">Log In Now</span>
+            </button>
+            <p className='mt-5 mr-5'>Have'nt any account!
+
+            <a href="/signup">Signup</a>
+            </p>
+          </form>
+          <div className="social-login">
+            <h3>log in via</h3>
+            <div className="social-icons">
+              <a href="#" className="social-login__icon "> <img class="step-img" src="/assets/images/google.png" width={"25px"} alt="" /></a>
+              <a href="#" className="social-login__icon "><img class="step-img" src="/assets/images/facebook.png" width={"25px"} alt="" /></a>
+              <a href="#" className="social-login__icon "><img class="step-img" src="/assets/images/twitter.png" width={"25px"} alt="" /></a>
+            </div>
+          </div>
+        </div>
+        <div className="screen__background">
+          <span className="screen__background__shape screen__background__shape4">
+         
+          </span>
+          <span className="screen__background__shape screen__background__shape3"></span>
+          <span className="screen__background__shape screen__background__shape2"></span>
+          <span className="screen__background__shape screen__background__shape1"></span>
+        </div>
+      </div>
+    </div>
                 </div>
             </div>
         </div>

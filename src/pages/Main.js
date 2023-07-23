@@ -10,6 +10,7 @@ import Book from "./Book";
 import Login from "./Login"
 import Register from "./Register";
 import BecomeProvider from "./BecomeProvider";
+import Signup from "./Signup";
 function Main() {
   return (
     <Router>
@@ -23,6 +24,8 @@ function Main() {
             <Route path="signin" element={<Login /> }/>
             <Route path="register" element={<Register/> }/>
             <Route path="/becomeprovider" element={<BecomeProvider/> }/>
+            <Route path="/login" element={<Login/> }/>
+            <Route path="/signup" element={<Signup/> }/>
 
           </Route>
           <Route path="*" element={<NotFound />} />
