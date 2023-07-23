@@ -126,9 +126,9 @@ const Signup = () => {
           <div className="social-login">
             <h3>log in via</h3>
             <div className="social-icons">
-              <a href="#" className="social-login__icon "> <img class="step-img" src="/assets/images/google.png" width={"25px"} alt="" /></a>
-              <a href="#" className="social-login__icon "><img class="step-img" src="/assets/images/facebook.png" width={"25px"} alt="" /></a>
-              <a href="#" className="social-login__icon "><img class="step-img" src="/assets/images/twitter.png" width={"25px"} alt="" /></a>
+              <a href="/" className="social-login__icon "> <img class="step-img" src="/assets/images/google.png" width={"25px"} alt="" /></a>
+              <a href="/" className="social-login__icon "><img class="step-img" src="/assets/images/facebook.png" width={"25px"} alt="" /></a>
+              <a href="/" className="social-login__icon "><img class="step-img" src="/assets/images/twitter.png" width={"25px"} alt="" /></a>
             </div>
           </div>
         </div>
