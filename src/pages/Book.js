@@ -416,7 +416,7 @@ const Book = () => {
                                 <hr></hr>
                                 <p class="text-center">No commitment</p>
                                 <div class="text-center">
-                                <a class="com-btn-view text-center mx-auto">Book Now</a>
+                                <a href="/" class="com-btn-view text-center mx-auto">Book Now</a>
                                 </div>
                               </div>
                             </div>
@@ -436,7 +436,7 @@ const Book = () => {
                                 <hr></hr>
                                 <p class="text-center">2 months commitment</p>
                                 <div class="text-center">
-                                <a class="com-btn-view text-center mx-auto">Book Now</a>
+                                <a  href="/" class="com-btn-view text-center mx-auto">Book Now</a>
                                 </div>
                               </div>
                             </div>
@@ -456,7 +456,7 @@ const Book = () => {
                                 <hr></hr>
                                 <p class="text-center">5 months commitment</p>
                                 <div class="text-center">
-                                <a class="com-btn-view text-center mx-auto">Book Now</a>
+                                <a href="/" class="com-btn-view text-center mx-auto">Book Now</a>
                                 </div>
                               </div>
                             </div>
