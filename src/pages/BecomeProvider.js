@@ -1,8 +1,8 @@
 import React from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-// import { Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 const BecomeProvider = () => {
   return (
@@ -128,73 +128,60 @@ const BecomeProvider = () => {
                 <div class="form-details">
                   <div class="row">
                     <div class="col-md-6">
-                      <label>First Name</label>
-                      <input class="form-control" type="text" />
+                      <label>Full Name:</label>
+                      <input class="form-control" type="text" placeholder="Name"/>
                     </div>
                     <div class="col-md-6">
-                      <label>First Name</label>
-                      <input class="form-control" type="text" />
+                      <label>Email:</label>
+                      <input class="form-control" type="email" placeholder="Email"/>
                     </div>
                     <div class="col-md-6">
-                      <label>First Name</label>
-                      <input class="form-control" type="text" />
+                      <label>Phone No:</label>
+                      <input class="form-control" type="text" placeholder="Phone Number"/>
                     </div>
+
                     <div class="col-md-6">
-                      <label>First Name</label>
-                      <input class="form-control" type="text" />
-                    </div>
-                    <div class="col-md-6">
-                      <label>First Name</label>
+                      <label>Your Gender:</label>
                       <select class="form-control">
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
+                      <option selected="true" disabled="disabled" value="">Select Option</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Shemale</option>
+                        <option>Rather Not Say</option>
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <label>First Name</label>
+                      <label>Primary Exercise:</label>
                       <select class="form-control">
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
+                      <option selected="true" disabled="disabled" value="">Select Option</option>
+                        <option>Massage</option>
+                        <option>Yoga</option>
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <label>First Name</label>
+                      <label>Are you liability insured?</label>
                       <select class="form-control">
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label>First Name</label>
-                      <select class="form-control">
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
+                      <option selected="true" disabled="disabled" value="">Select Option</option>
+                        <option>Yes</option>
+                        <option>No</option>
                       </select>
                     </div>
                     <div class="col-md-12">
-                      <label>First Name</label>
+                      <label>Are you certified/licensed in your primary expertise?</label>
                       <select class="form-control">
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
+                      <option selected="true" disabled="disabled" value="">Select Option</option>
+                      <option>Yes</option>
+                        <option>No</option>
                       </select>
                     </div>
+
                     <div class="col-md-12">
-                      <label>First Name</label>
-                      <input class="form-control" type="text" />
+                      <label>What's your highest level of training (if any) in the primary expertise?</label>
+                      <input class="form-control" type="text" placeholder="Your level"/>
                     </div>
                     <div class="col-md-12">
-                      <label>First Name</label>
-                      <input class="form-control" type="text" />
+                      <label>Approx. how many years of experience do you have in your primary expertise as a provider? *</label>
+                      <input class="form-control" type="text" placeholder="Years of experience"/>
                     </div>
                   </div>
                   <a href="/" class="com-btn-view bop-form-btn">Apply now</a>
