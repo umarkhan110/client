@@ -1,6 +1,42 @@
 import React, { useState } from "react";
-
+import Modal from 'react-modal';
+import DateCalender from "./DateCalender";
+import TimeRange from "./TimeRange";
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
 const Book = () => {
+  const [isHighlighted, setIsHighlighted] = useState(false);
+  const handleButtonClick = () => {
+    setIsHighlighted(true);
+  };
+
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+
+
   const [activeTab, setActiveTab] = useState("tab1");
 
   const showTabContent = (tabId) => {
@@ -21,65 +57,65 @@ const Book = () => {
     tabButtons[tabIndex].classList.add("active");
   };
 
+
+
+  const showTabG = (tabIndex) => {
+    // Get all tab buttons
+    const tabButtonsG = document.querySelectorAll(".tab-select-g");
+    console.log(tabButtonsG)
+
+    // Deactivate all tab buttons
+    tabButtonsG.forEach((button) => {
+      button.classList.remove("active");
+    });
+
+    // Activate the selected tab button
+    tabButtonsG[tabIndex].classList.add("active");
+  };
+
+
+
+
+  const showTabType = (tabIndex) => {
+    // Get all tab buttons
+    const tabButtonsType = document.querySelectorAll(".tab-select-Type");
+    console.log(tabButtonsType)
+
+    // Deactivate all tab buttons
+    tabButtonsType.forEach((button) => {
+      button.classList.remove("active");
+    });
+
+    // Activate the selected tab button
+    tabButtonsType[tabIndex].classList.add("active");
+  };
+
+
+
+
+  
+  const showTabPeople = (tabIndex) => {
+    // Get all tab buttons
+    const tabButtonsPeople = document.querySelectorAll(".tab-select-2");
+    console.log(tabButtonsPeople)
+
+    // Deactivate all tab buttons
+    tabButtonsPeople.forEach((button) => {
+      button.classList.remove("active");
+    });
+
+    // Activate the selected tab button
+    tabButtonsPeople[tabIndex].classList.add("active");
+  };
+
+
   return (
     <div id="private_header">
-      <header class="login-header">
-        <div
-          class="back-btn-main"
-          data-url="https://www.bigtoe.yoga/book-session"
-        >
-          <a
-            href="jvascript:void(0)"
-            data-back-section="address_main_block"
-            class="back-btn hide back-link"
-            id="add_add_show_hide"
-          >
-            <i class="fa fa-arrow-left" style={{ fontSize: "36px" }}></i>
-          </a>
-        </div>
-        <div class="container">
-          <div class="col-xs-12 text-center">
-            <a class="logo-brand" href="/">
-              <img src="/assets/images/logo.png" alt="Logo" />
-            </a>
-          </div>
-        </div>
-        <div class="right-top-main">
-          <a href="register" class="register-link hidden-sm hidden-xs">
-            Sign Up
-          </a>
-          <a href="/signin" class="login-link hidden-sm hidden-xs">
-            Login
-          </a>
-          <a
-            href="register"
-            class="login-link responsive visible-sm visible-xs"
-          >
-            Sign Up
-          </a>
-        </div>
-      </header>
-
-      <div class="preloades" id="preloades" style={{ display: "none" }}>
-        <div class="spinner">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
-        </div>
-      </div>
 
       <div class="wrapper" data-url="" data-crt="book-session.html">
         <div class="main-wrap-append">
           <div class="login-area-main app-view-screen booking-main">
             <div class="booking-form">
-              {/* <div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div> */}
               <div class="container">
                 <h1 class="text-center">Please add details for booking.</h1>
                 <div class="tab-menu">
@@ -107,7 +143,15 @@ const Book = () => {
                     }
                     onClick={() => showTabContent("tab4")}
                   >
-                    Pricing 
+                    Pricing
+                  </div>
+                  <div
+                    class={
+                      activeTab === "tab5" ? "tab-button  active" : "tab-button"
+                    }
+                    onClick={() => showTabContent("tab5")}
+                  >
+                    Location
                   </div>
                   <div
                     class={
@@ -117,6 +161,7 @@ const Book = () => {
                   >
                     Finish
                   </div>
+ 
 
                 </div>
 
@@ -157,41 +202,41 @@ const Book = () => {
                       <p class="text-center">
                         Give your muscles a refresh — target your needs and pain
                         points.
-                      </p>    
+                      </p>
                     </div>
                   </div>
-  
+
                 </div>
                 <div
                   class="tab-content"
                   id="tab2"
                   style={{ display: activeTab === "tab2" ? "block" : "none" }}
                 >
-                  <div class=" booking-new-form">
+                  <div class=" booking-new-form detailed-text">
                     <div class="container ">
                       <div class="row justify-content-center">
                         <div class="col-md-12">
                           <div class="form-details py-1">
                             <div class="row">
                               <div class="col-md-6">
-                              <label>How many people:</label>                                <div class="tab-container mt-0">
+                                <label>How many people:</label>                                <div class="tab-container mt-0">
                                   <div
-                                    class="tab-select text-center p-0 w-full active"
-                                    onClick={() => showTab(2)}
+                                    class="tab-select-2 text-center p-0 w-full active"
+                                    onClick={() => showTabPeople(0)}
                                   >
-                                 
+
                                     <h3 class="text-center mt-2 mb-1">Single</h3>
 
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(3)}
+                                    class="tab-select-2 w-full p-0 text-center"
+                                    onClick={() => showTabPeople(1)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Multiple
                                     </h3>
-                  
+
                                   </div>
                                 </div>
                               </div>
@@ -206,35 +251,35 @@ const Book = () => {
                               </div>
 
                               <div class="col-md-6">
-                              <label>How many people:</label>    
-                              <div class="tab-container mt-0">
+                                <label>Gender:</label>
+                                <div class="tab-container mt-0">
                                   <div
-                                    class="tab-select text-center p-0 w-full active"
-                                    onClick={() => showTab(4)}
+                                    class="tab-select-g text-center p-0 w-full active"
+                                    onClick={() => showTabG(0)}
                                   >
-                                 
+
                                     <h3 class="text-center mt-2 mb-1">Male</h3>
 
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(5)}
+                                    class="tab-select-g w-full p-0 text-center"
+                                    onClick={() => showTabG(1)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Female
                                     </h3>
-                  
+
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(6)}
+                                    class="tab-select-g w-full p-0 text-center"
+                                    onClick={() => showTabG(2)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Either
                                     </h3>
-                  
+
                                   </div>
                                 </div>
                               </div>
@@ -247,95 +292,95 @@ const Book = () => {
 
                               </div>
                               <div class="col-md-12">
-                              <label>Choose a treatment:</label>
-                              <div class="tab-container mt-0">
+                                <label>Choose a treatment:</label>
+                                <div class="tab-container mt-0">
                                   <div
-                                    class="tab-select text-center p-0 w-full active"
-                                    onClick={() => showTab(7)}
+                                    class="tab-select-Type text-center p-0 w-full active"
+                                    onClick={() => showTabType(0)}
                                   >
-                                 
+
                                     <h3 class="text-center mt-2 mb-1">Deep Tissue</h3>
 
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(8)}
+                                    class="tab-select-Type w-full p-0 text-center"
+                                    onClick={() => showTabType(1)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Swedish
                                     </h3>
-                  
+
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(9)}
+                                    class="tab-select-Type w-full p-0 text-center"
+                                    onClick={() => showTabType(2)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Prenatal
                                     </h3>
-                  
+
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(10)}
+                                    class="tab-select-Type w-full p-0 text-center"
+                                    onClick={() => showTabType(3)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Sport
                                     </h3>
-                  
+
                                   </div>
 
 
 
-              
+
 
                                 </div>
                               </div>
                               <div class="col-md-12">
-                              <div class="tab-container mt-0">
-            
+                                <div class="tab-container mt-0">
+
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(11)}
+                                    class="tab-select-Type w-full p-0 text-center"
+                                    onClick={() => showTabType(4)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Postpartum
                                     </h3>
-                  
+
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(12)}
+                                    class="tab-select-Type w-full p-0 text-center"
+                                    onClick={() => showTabType(5)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Reflexology
                                     </h3>
-                  
+
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(13)}
+                                    class="tab-select-Type w-full p-0 text-center"
+                                    onClick={() => showTabType(6)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
                                       Regular Lymphatic
                                     </h3>
-                  
+
                                   </div>
                                   <div
-                                    class="tab-select w-full p-0 text-center"
-                                    onClick={() => showTab(14)}
+                                    class="tab-select-Type w-full p-0 text-center"
+                                    onClick={() => showTabType(7)}
                                   >
-            
+
                                     <h3 class="text-center mt-2 mb-1">
-                                   Post-OPLymphatic
+                                      Post-OPLymphatic
                                     </h3>
-                  
+
                                   </div>
 
                                 </div>
@@ -373,7 +418,8 @@ const Book = () => {
                                 </h2>
                               </div>
                             </div>
-
+                            <div className="confirm-btns">
+                             
                             <div class="col-md-6 text-center">
                               <a
                                 href="/"
@@ -390,38 +436,129 @@ const Book = () => {
                                 Cancel
                               </a>
                             </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+
+
+
+
+
+                <div
+                  class="tab-content"
+                  id="tab5"
+                  style={{ display: activeTab === "tab5" ? "block" : "none" }}
+                >
+                  <div class=" cc">
+                    <div class="container ">
+                      <div class="row justify-content-center">
+                        <div class="col-md-12">
+                          <div class="form-details">
+                            <div class="row">
+                              <div className="col-md-12">
+                                <DateCalender/>
+                                <TimeRange/>
+                              </div>
+                            </div>
+                              <div className="confirm-btns">
+                            <div class="col-md-6 text-center">
+                              <a
+                                href="/"
+                                class="com-btn-view mt-0 bop-form-btn"
+                              >
+                                Apply now
+                              </a>
+                            </div>
+                            <div class="col-md-6 text-center">
+                              <a
+                                href="/"
+                                class="com-btn-view mt-0 bop-form-btn"
+                              >
+                                Cancel
+                              </a>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
                 <div
                   class="tab-content"
                   id="tab4"
                   style={{ display: activeTab === "tab4" ? "block" : "none" }}
                 >
+                  <div>
+                    <Modal
+                      isOpen={modalIsOpen}
+                      onAfterOpen={afterOpenModal}
+                      onRequestClose={closeModal}
+                      style={customStyles}
+                      contentLabel="Example Modal"
+                    ><div className="d-flex">
+                            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add Card Details</h2>
+                      <button className="ml-auto modal-close-btn pl-5" onClick={closeModal}><i className="pl-5 mt-3 ml-5 fa fa-close "></i></button>
+                    </div>
+                <form>
+                      <div className="my-2">
+                        <lable>Name:</lable>
+                        <input type="text" className="form-control" />
+                      </div>
+                      <div className="my-2">
+                        <lable>Card Number:</lable>
+                        <input type="text" className="form-control" />
+                      </div>
+                      <div className="my-2">
+                        <lable>Security Code:</lable>
+                        <input type="text" className="form-control" />
+                      </div>
+                      <div className="my-2">
+                        <lable>Expiration Date:</lable>
+                        <input type="date" className="form-control" />
+                      </div>
+                      <div className="mt-3">
+                      <button class="com-btn-view text-center mt-5 credit-btn">Submit</button>
+
+                      </div>
+                      </form>
+  
+                    </Modal>
+                  </div>
                   <div class=" cc">
-                    <div class="container pricing-tab ">
+                    <div className={isHighlighted ? 'container pricing-tab highlight' : 'container pricing-tab'}>
                       <div class="row justify-content-center">
                         <div class="col-md-4">
                           <div class="form-details p-1">
                             <div class="row">
                               <div class="col-md-12">
                                 <h2 class="text-center">
-                                     Pay as you go
+                                  Pay as you go
                                 </h2>
                                 <h3 class="text-center">One time payment</h3>
                                 <h1 class="text-center">$100</h1>
                                 <hr></hr>
                                 <p class="text-center">No commitment</p>
                                 <div class="text-center">
-                                <a href="/" class="com-btn-view text-center mx-auto">Book Now</a>
+                                  <button class="com-btn-view text-center mx-auto total-money"  onClick={handleButtonClick}>Book Now</button>
                                 </div>
                               </div>
                             </div>
 
-              
+
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -429,19 +566,19 @@ const Book = () => {
                             <div class="row">
                               <div class="col-md-12">
                                 <h2 class="text-center">
-                                    Membership
+                                  Membership
                                 </h2>
                                 <h3 class="text-center">$150.00/month</h3>
                                 <h1 class="text-center">$200</h1>
                                 <hr></hr>
                                 <p class="text-center">2 months commitment</p>
                                 <div class="text-center">
-                                <a  href="/" class="com-btn-view text-center mx-auto">Book Now</a>
+                                  <button class="com-btn-view text-center mx-auto total-money">Book Now</button>
                                 </div>
                               </div>
                             </div>
 
-              
+
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -449,47 +586,81 @@ const Book = () => {
                             <div class="row">
                               <div class="col-md-12">
                                 <h2 class="text-center">
-                                    Membership Plus
+                                  Membership Plus
                                 </h2>
                                 <h3 class="text-center">$150.00/month</h3>
                                 <h1 class="text-center">$200</h1>
                                 <hr></hr>
                                 <p class="text-center">5 months commitment</p>
                                 <div class="text-center">
-                                <a href="/" class="com-btn-view text-center mx-auto">Book Now</a>
+                                  <button class="com-btn-view text-center mx-auto total-money">Book Now</button>
                                 </div>
                               </div>
                             </div>
 
-              
+
                           </div>
                         </div>
 
-                        
+
+                      </div>
+                    </div>
+
+                    <div className={isHighlighted ? 'total-pricing highlight container mt-5' : 'total-pricing container mt-5'}>
+                      <div class="row justify-content-center">
+                        <div class="col-md-6">
+                          <div class="form-details p-1 px-5">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <h2 class="">
+                                  Add Payment 
+                                  <button class="com-btn-view text-center mx-auto add-card-btn" onClick={openModal}>Proceed Payment</button>
+                                </h2>
+                                <h3 >Time</h3>
+                                <div className="d-flex">
+                                <h4 class="text-center">Tomorrow </h4>
+                                <h4 class="text-center ml-auto">July 24, 2023</h4>
+                                </div>
+                                <div className="d-flex">
+                                <h4 class="text-center">08:00 AM </h4>
+                                <h4 class="text-center ml-auto">11:00 AM</h4>
+                                </div>
+                            <hr></hr>
+                            <p>We will pre-authorize a hold on your payment method for the total amount above and charge for it after your appointment is completed</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-details p-1 px-5">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <h2 >
+                                  Membership
+                                </h2>
+                                <div className="d-flex">
+                                <h3 class="text-center">Package:</h3>
+                                <h3 class="text-center ml-auto">$150.00/month</h3>
+                                </div>
+                                <div className="d-flex">
+                                <h3 class="text-center"><b>Due Today:</b></h3>
+                                <h3 class="text-center ml-auto"><b>$200</b></h3>
+                                </div>
+                                <hr></hr>
+                                <div className="d-flex">
+                                <h3 class="text-center"><b>Total:</b></h3>
+                                <h3 class="text-center ml-auto"><b>$200</b></h3>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* <div class="">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xs-12 -wrap">
-                    <div class="title">
-                      <a href="jvascript:void(0)" class="back-btn hide">
-                        <img src="assets/css/images/angle-left-solid.html" alt="" />
-                      </a>
-                      <h2>Booking Form</h2>
-                    </div>
-
-                
-
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

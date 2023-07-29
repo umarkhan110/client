@@ -8,24 +8,22 @@ import Home from "./Home";
 import NotFound from "./NotFound";
 import Book from "./Book";
 import Login from "./Login"
-import Register from "./Register";
 import BecomeProvider from "./BecomeProvider";
 import Signup from "./Signup";
+import Dashboard from "./Dashboard";
 function Main() {
   return (
     <Router>
       <>
         <Routes>
-          {/* <Route exact path="/account/login" element={<Login />} /> */}
-         
-            <Route path="book" element={<Book/> }/>
+          <Route exact path="/signin" element={<Login />} />
+          <Route path="/signup" element={<Signup/> }/>
+            <Route path="/dashboard" element={<Dashboard /> }/>
+            
           <Route path="/" element={<WebLayout />}>
             <Route path="/" element={<Home /> }/>
-            <Route path="signin" element={<Login /> }/>
-            <Route path="register" element={<Register/> }/>
             <Route path="/becomeprovider" element={<BecomeProvider/> }/>
-            <Route path="/login" element={<Login/> }/>
-            <Route path="/signup" element={<Signup/> }/>
+            <Route path="/book" element={<Book/> }/>
 
           </Route>
           <Route path="*" element={<NotFound />} />

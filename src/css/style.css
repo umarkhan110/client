@@ -358,7 +358,7 @@ header.header.shadow {
 }
 
 .banner {
-  padding: 105px 0 0;
+  /* padding: 105px 0 0; */
   background-image: url("/public/assets/images/banner-view.png");
   background-size: cover;
   background-position: center center;
@@ -4811,10 +4811,6 @@ width: 100%;
     font-size: 30px;
     font-weight: bold;
 }
-.step-boxes .step-art{
-  border: 1px solid #b38181;
-  border-style: dashed;
-}
 .step-boxes:hover .step-art img{
   transform: scale(1.07);
 transition: 2s;
@@ -5160,7 +5156,7 @@ margin-top: 20px;
 }
 
 /* Style for the tab buttons */
-.tab-select {
+.tab-select , .tab-select-2 ,.tab-select-g , .tab-select-Type {
   display: inline-block;
   padding: 10px 20px;
   border: 1px solid #ccc;
@@ -5170,7 +5166,7 @@ margin-top: 20px;
 }
 
 /* Style for the selected tab select */
-.tab-select.active {
+.tab-select.active ,  .tab-select-g.active ,.tab-select-2.active  , .tab-select-Type.active {
 border: 3px solid #4BB7C3;
   box-shadow: 10px 14px 10px rgba(203, 210, 238, 0.21);
 }
@@ -5539,4 +5535,390 @@ flex-wrap: wrap;
 .already-sugg{
   top: 10px;
   position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+/* Add this CSS to style the modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.float-right{
+  float: right !important;
+}
+.ml-auto{
+  margin-left: auto;
+}
+.modal-close-btn{
+  background-color: transparent !important;
+  border: 0px  !important;
+}
+.credit-btn{
+  width: 120px !important;
+}
+.detailed-text h3{
+font-size: 17px !important;
+}
+.add-card-btn{
+  width: auto !important;
+  float: right !important;
+  padding: 0px 15px 10px 15px !important;
+  font-size: 16px !important;
+  font-weight: 500;
+}
+.total-pricing{
+  display: none;
+}
+.total-pricing.highlight{
+display: block !important;
+}
+.pricing-tab.highlight{
+  display: none !important;
+}
+.react-tabs__tab-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.react-tabs__tab-list li{
+  background-color: white;
+  border: 1px solid #4bb7c3;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 5px 4px;
+}
+.react-tabs__tab-list li.react-tabs__tab--selected{
+  background-color: #4bb7c3;
+  border: 1px solid #4bb7c3;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white !important;
+}
+.react-tabs__tab-list li.react-tabs__tab--selected:focus-visible{
+  outline: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TimeRange.css */
+
+#time-range {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+.track.track-0{
+  background-color: white;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+/* Styling the track and thumb */
+.sliders_step1 .slider-track {
+  height: 8px;
+  background: #d7d7d7;
+  border: 1px solid #bababa;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 #fff, 0 1px 0 #cfcfcf inset;
+  margin: 8px 0;
+}
+
+.sliders_step1 .slider-thumb {
+  width: 100px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  position: relative;
+  font-weight: bolder;
+}
+.sliders_step1 .slider-thumb:focus-visible{
+  outline: none !important;
+  border: 0px !important;
+}
+/* Styling the tooltip */
+.sliders_step1 .slider-tooltip {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.sliders_step1 .slider-thumb:hover + .slider-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+.slider-img img{
+  border-radius: 10px;
+}
+.text-left{
+text-align: left !important;
+}
+.slider {
+  width: 100%;
+  margin: 0;
+  background: #dbdbdb !important;
+  padding: 10px !important;
+  border-radius: 5px !important;
+}
+.sliders_step1 .slider-thumb{
+  position: relative !important;
+}
+
+
+/* ======= Tab View All Responsivepness ====== */
+@media only screen and (min-width:768px) and (max-width:991px){
+  .swiper-slide{
+    width: 50% !important;
+    text-align: center;
+  }
+  .services .swiper-button-next{
+    right: 0px;
+  }
+  .services .swiper-button-prev{
+    left: 0px;
+  }  
+  .services .swiper-button-prev, .services .swiper-button-next{
+    padding: 15px;
+    margin: 0px 5px;
+    width: 20px;
+    height: 20px;
+    }
+  .services .swiper-button-prev:after, .services .swiper-button-next:after{
+    font-size: 14px;
+  }
+  .main-hero-content{
+    margin: 0px 15px;
+  }
+  .step-boxes img{
+    width: 100%;
+    height: 100%;
+  }
+  .col-md-4{
+    width: 100%;
+  }
+  .form-details .col-md-6, .form-details .col-md-12{
+    width: 100%;
+  }
+  .com-btn-view {
+    max-width: 135px !important;
+}
+.arvind_widget_banner{
+display: block !important;
+}
+.col-md-8{
+  width: 100%;
+}
+.sign-main-btn{
+  display: none;
+}
+.signup-number{
+  width: 96% !important;
+}
+.num-icon {
+  position: relative;
+  right: -55px;
+  left: auto;
+}
+.acc-sugg a, .already-sugg a{
+  color: black;
+  font-weight: 600;
+}
+.sugg{
+  text-align: left;
+}
+
+}
+
+
+
+
+/* ============= Mobile View All responsiveness ========= */
+
+
+@media only screen and (min-width:320px) and (max-width:610px){
+  .screen__background__shape4 {
+    width: 150px;
+  }
+  .slider-box {
+    padding: 15px;
+    text-align: center;
+    margin: 0px 15px;
+  }
+  .services .swiper-button-next{
+    right: 5px;
+  }
+  .services .swiper-button-prev{
+    left: 5px;
+  }  
+  .services .swiper-button-prev, .services .swiper-button-next{
+    padding: 15px;
+    margin: 0px 5px;
+    width: 20px;
+    height: 20px;
+    }
+  .services .swiper-button-prev:after, .services .swiper-button-next:after{
+    font-size: 14px;
+  }
+  .com-btn-view {
+    max-width: 135px !important;
+}
+.hiddenxs{
+  display: block !important;
+}
+.showxs{
+  display: none !important;
+}
+.bap-section .content-view h2{
+  font-size: 45px;
+}
+.form-details .col-md-6, .form-details .col-md-12{
+  width: 100%;
+}
+.arvind_widget_banner{
+  display: block !important;
+  }
+  .col-md-8{
+    width: 100%;
+  }
+  .login__input {
+width: 90%;
+}
+.login {
+width: 100%;
+}
+.acc-sugg{
+  margin-left: 0px !important;
+  text-align: left;
+  top: 30px;
+  position: relative;;
+}
+.social-login__icon{
+  padding: 10px  5px;
+}
+.acc-sugg a{
+  color: black;
+}
+.sign-main-btn{
+  display: none;
+}
+.no-wrap{
+  display: flex;
+  flex-wrap: unset !important;
+}
+.num-icon{
+  left:0px
+}
+.select-s{
+  width: 90% !important;
+}
+.login.signup {
+width: 90%;
+}
+.signup-number{
+  width: 100%;
+}
+.sugg{
+  text-align: left;
+}
+.social-login h3{
+  margin-top: 40px;
+}
+.tab-menu{
+  padding-left: 120px;
+  overflow-x: scroll;
+}
+.tab-menu .tab-button {
+  background-color: #4BB7C3;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  margin: 4px;
+  border-radius: 30px;
+  height: 100%;
+}
+.booking-form {
+  margin: 100px 30px;
+}
+.col-md-4{
+  width: 100%;
+}
+.pricing-tab .col-md-4{
+  margin: 10px 0px;
+}
+.confirm-btns{
+  display: flex;
+}
+.confirm-btns .col-md-6{
+  width: 50% !important;
+}
+}
+
+
+.navbar-button{
+  background-color: #01baf2;
+  border-radius: 50px;
+  color: white;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
