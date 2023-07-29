@@ -3902,9 +3902,9 @@ a.foot-logo img {
     margin: 0 0;
     top: -25% !important;
   }
-  .hiddenxs {
+  /* .hiddenxs {
     display: none !important;
-  }
+  } */
   .showxs {
     display: block !important;
   }
@@ -5823,9 +5823,9 @@ display: block !important;
   .com-btn-view {
     max-width: 135px !important;
 }
-.hiddenxs{
+/* .hiddenxs{
   display: block !important;
-}
+} */
 .showxs{
   display: none !important;
 }

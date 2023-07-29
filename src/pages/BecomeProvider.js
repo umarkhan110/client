@@ -49,7 +49,7 @@ const BecomeProvider = () => {
 
     });
     const data = await res.json();
-    console.log(res)
+    console.log(data)
     // if (res.status === 422 || !data) {
     //   notify("error", data.message)
     // } else {

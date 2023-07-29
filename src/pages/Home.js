@@ -12,26 +12,14 @@ const Home = () => {
         
             <div class="banner center-view">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-xs-12 showxs">
-                        <div class="content-view fadeInLeft">
-                            <h2>Mobile Massage – In Your Home, Hotel Or Office</h2>
-                            <h1>
-                        <span>
-                             <a href="/" class="typewrite" data-period="500" data-type='["Massage on Demand","Private Yoga Classes"]'>
-                                <span class="wrap"></span>
-                              </a>
-                        </span>
-                            </h1>
-                        </div>
-                    </div>
+                <div class="row py-5">
 
-                    <div class="col-sm-6 col-xs-12 hiddenxs">
+                    <div class="col-sm-6 col-xs-12 ">
                         <div class="content-view fadeInLeft main-hero-content">
                             <h2>Mobile Massage – In Your Home, Hotel Or Office</h2>
-                            <h3>Book professional massage therapists that come to you. Same day or in advance, 7 days a week.</h3>
+                            <h3 className='d-none d-sm-block'>Book professional massage therapists that come to you. Same day or in advance, 7 days a week.</h3>
                             <a href='/book' class="com-btn-view">Book Now</a>
-                            <h5>Qualified and highly skilled providers, all carefully vetted in advance. </h5>
+                            <h5 className='d-none d-sm-block'>Qualified and highly skilled providers, all carefully vetted in advance. </h5>
                             <h1>
                         <span> 
                              <a href="/" class="typewrite" data-period="500" data-type='["Massage on Demand","Private Yoga Classes"]'>
