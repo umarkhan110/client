@@ -15,7 +15,6 @@ const ViewProvider = () => {
     formState: { errors },
     reset,
     formState,
-    formState: { isSubmitSuccessful }
   } = useForm({ defaultValues: { password: "" } });
 
   const onSubmit = async (fData) => {
@@ -43,7 +42,7 @@ const ViewProvider = () => {
       }
     }
     getProviderDetail()
-  }, [])
+  })
   React.useEffect(() => {
     if (formState.isSubmitSuccessful) {
       reset({ password: '' });
