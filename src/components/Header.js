@@ -50,7 +50,13 @@ const Header = () => {
           </Nav>
           <Nav>
           <Nav.Link href="/book" className='navbar-button'>Book now</Nav.Link>
-            <Nav.Link href="/signin" >Login</Nav.Link>
+            {/* <Nav.Link href="/signin" >Login</Nav.Link> */}
+            <NavDropdown title="Login" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="/provider">Login as Provider</NavDropdown.Item>
+                <NavDropdown.Item href="/client">Login as Client</NavDropdown.Item>
+                
+                <NavDropdown.Item href="/admin">Admin</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

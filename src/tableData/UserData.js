@@ -18,8 +18,8 @@ export const columns = (data) => {
 
     {
       name: "Name",
-      selector: 'fullName',
-      cell: (row) => row["fullName"],
+      selector: 'fullname',
+      cell: (row) => row["fullname"],
       sortable: true,
       // width: "300px",
       // maxWidth: "300px",
@@ -35,23 +35,18 @@ export const columns = (data) => {
     },
     {
       name: "Status",
-      cell: (row) =>
-        row["userStatusDescription"] === "UnPaid" ? (
-          <div className="bg-[#C4E1FF] rounded-xl text-black w-20 h-7 text-center flex justify-center items-center border-[#D9D9D9] border ">Non-paid</div>
-        ) : row["userStatusDescription"] === "Paid" ? (
-          <div className="bg-gradient-to-r from-[#8639FF] to-[#BE51FF] rounded-xl text-white  w-20 h-7 text-center flex justify-center items-center border-[#D9D9D9] border">Paid</div>
-        ) : (
-          ""
-        ),
-        // width: "300px",
-        // maxWidth: "300px",
+      selector:'status',
+      cell: (row) => row["status"],
+      sortable: true,
+      // width: "350px",
+      // maxWidth: "350px",
     },
     {
       name: "Actions",
       button: true,
       cell: (row) => (
         <div className="flex items-center">
-          <Link style={{ marginRight: "10px", marginTop: "5px" }} to={`/viewUser`}>
+          <Link style={{ marginRight: "10px", marginTop: "5px" }} to={`/dashboard/viewprovider/${row._id}`}>
             <button
               // onClick={() => {
               //   userId(row.id);
@@ -65,13 +60,13 @@ export const columns = (data) => {
               View
             </button>
           </Link>
-          <button
+          {/* <button
             style={{ marginRight: "10px" }}
             type="button"
             data-toggle="modal"
             className="tableactions_action"
           >
-            {/* <Img
+            <Img
               src={delte}
               alt="delete-img"
               style={{ height: "18px", width: "15px", maxWidth: "unset" }}
@@ -86,9 +81,9 @@ export const columns = (data) => {
               //     "Users"
               //   )
               // }
-            /> */}
+            />
             Delete
-          </button>
+          </button> */}
         </div>
         
       ),

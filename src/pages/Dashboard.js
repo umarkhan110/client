@@ -398,7 +398,7 @@ const Dashboard = () => {
                             <div class="row">
                                 <div class="col-lg-4 col-md-6 col-12">
                                 <label for="">Logo:</label>
-                                <div class="wrapper">
+                                <div class="wrapper-dashboard">
                                     <div class="box">
                                     <div class="js--image-preview"></div>
                                     <div class="upload-options">
@@ -415,7 +415,7 @@ const Dashboard = () => {
                                 <div class="col-lg-1"></div>
                                 <div class="col-lg-4 col-md-6 col-12">
                                 <label for="">Cover Image:</label>
-                                <div class="wrapper">
+                                <div class="wrapper-dashboard">
                                     <div class="box rounded w-100">
                                     <div class="js--image-preview"></div>
                                     <div class="upload-options">
