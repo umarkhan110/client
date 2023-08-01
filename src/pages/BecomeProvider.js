@@ -43,18 +43,33 @@ const BecomeProvider = () => {
     formData.append('image', input.image, input.image.name);
     event.preventDefault();
     debugger
-    const res = await fetch("http://localhost:5000/provider/apply_provider", {
+    const res = await fetch("https://massage-backend-qiag.onrender.com/provider/apply_provider", {
       method: "POST",
       body: formData,
 
     });
     const data = await res.json();
     console.log(data)
-    // if (res.status === 422 || !data) {
-    //   notify("error", data.message)
-    // } else {
-    //   router.push("/login");
-    // }
+    if (res.status === 200) {
+      alert("Your application is submitted")
+      // notify("error", data.message)
+      setInput({
+        fullname:"",
+        email:"",
+        phone:"",
+        gender:"",
+        nearest:"",
+        certified:"",
+        expertise:"",
+        liability:"",
+        image:"",
+        highest_level_of_training:"",
+        years_of_experience:"",
+        password:""
+      })
+    } else {
+      // router.push("/login");
+    }
   }
   return (
     <>

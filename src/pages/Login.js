@@ -99,7 +99,7 @@ const Login = () => {
                        )}
               </div>
               <div class="d-flex justify-content-between align-items-center mb-5">
-                <button id="login" class="btn login-btn" type="submit" ></button>
+                <button id="login" class="btn login-btn" type="submit" >Sign in</button>
                 <a href="#!" class="forgot-password-link">Password?</a>
               </div>
             </form>           

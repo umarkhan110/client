@@ -1,6 +1,6 @@
 import axios from "axios";
 export const AxiosCall = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://massage-backend-qiag.onrender.com",
   headers: {
     // "Authorization": `Bearer ${localStorage.getItem("aggadoo-token")}`,
     "Cache-Control": "no-cache",
