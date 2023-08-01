@@ -14,7 +14,7 @@ const Providers = () => {
             }
         }
         getAllProvider()
-      }, [])
+      })
   return (
     <Table columns={columns(data)} incomingData={data} />
 
