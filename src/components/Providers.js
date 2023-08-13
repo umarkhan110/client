@@ -31,7 +31,7 @@ const Providers = () => {
         }
         getAllProvider()
         }
-      }, [])
+      })
   return (
     <>
     {role === "Client" ?

@@ -5,8 +5,8 @@ import AdminDashboardService from '../../api/admindashboard';
 const OrderList = () => {
   const adminDashboardService = new AdminDashboardService()
     const [data, setData] = useState()
+    const role = localStorage.getItem("role")
       useEffect(()=>{
-        const role = localStorage.getItem("role")
         if(role === "Admin"){
           const getAllBookings = async ()=>{
             const res = await adminDashboardService.viewAllBooking();
@@ -17,7 +17,7 @@ const OrderList = () => {
         }
         getAllBookings()
       }
-      }, [])
+      })
   return (
     <Table columns={bookingcolumns(data)} incomingData={data} />
   )
