@@ -193,7 +193,7 @@ const Dashboard = () => {
                     </div>
                     </section> */}
                 </div>
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                {/* <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
                     <section class="task my-4"></section>
                     <div class="container">
@@ -1260,7 +1260,7 @@ const Dashboard = () => {
                 </div>
 
                 </div>
-                </div>
+                </div> */}
                 </div>
             </div>
             </div>

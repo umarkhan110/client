@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import SigninService from '../api/signin';
 import { useForm } from 'react-hook-form';
+import ButtonLoadingSpinner from "../components/buttonLoadingSpinner"
+import toast from '../components/Toast';
 const Login = () => {
   const signinService = new SigninService()
   let location = useLocation();
   const path = location.pathname.split("/")[1]
   const navigate = useNavigate()
+  const [loader, setLoader] = useState(false)
+
+  const notify = React.useCallback((type, message) => {
+    toast({ type, message });
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -14,6 +22,7 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = async (fData) => {
+    setLoader(true)
     const data = {
       email: fData.email,
       password: fData.password,
@@ -21,31 +30,24 @@ const Login = () => {
     try {
       const resp = await signinService.signin(path, data);
       if (resp?.status === 200) {
-        // dispatch(setUserState({userlogin: true, UserDetail: resp?.data?.data?.user}))
         localStorage.setItem("massage-token", resp.data.data.token)
         localStorage.setItem("role", resp.data.data.emailExist.role)
-        console.log("User has been logged in!",)
+        localStorage.setItem("user", resp.data.data.emailExist._id)
+        notify("success", "User has been logged in!")
         setTimeout(() => {
-          navigate("/dashboard");
-        }, 1500);
+          if(path === "client"){
+            navigate("/book");
+          }else{
+            navigate("/dashboard");
+          }
+        }, 1500)
       } else {
-        
-        // Swal.fire({
-        //   title: resp?.data?.message || "Something went wrong!",
-        //   timer: 1500,
-        //   icon: "error",
-        //   showConfirmButton: false,
-        // });
+        notify("error", resp.data.message)
       }
     } catch (error) {
-      // Swal.fire({
-      //   title: "Something went wrong!",
-      //   timer: 1500,
-      //   icon: "error",
-      //   showConfirmButton: false,
-      // });
+         notify("error", error)
     }
-    // setLoader(false);
+    setLoader(false);
   };
   return (
 <div class="container-fluid">
@@ -99,11 +101,17 @@ const Login = () => {
                        )}
               </div>
               <div class="d-flex justify-content-between align-items-center mb-5">
-                <button id="login" class="btn login-btn" type="submit" >Sign in</button>
+                <button id="login" class="btn login-btn" type="submit" >
+                {loader && (
+              <ButtonLoadingSpinner ClassStyle="btn inline w-4 h-4 mr-3 align-self-center text-white spinner-border" role="status" />
+            )}
+            Sign in</button>
                 <a href="#!" class="forgot-password-link">Password?</a>
               </div>
-            </form>           
+            </form> 
+            {path === "client" ?
             <p class="login-wrapper-footer-text">Need an account? <a href="/signup" class="text-reset">Signup here</a></p>
+          : ""}          
           </div>
         </div>
       </div>

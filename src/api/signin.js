@@ -2,6 +2,16 @@ import { AxiosCall } from "./axios";
 
 export default class SigninService {
 
+  signup = async (body) => {
+    try {
+      debugger
+     const response = await AxiosCall.post(`client/signup`, body);
+     return response;
+   } catch (err) {
+       return err.response
+   }
+  }
+  
   signin = async (path, body) => {
     try {
      const response = await AxiosCall.post(`${path}/signin`, body);
@@ -10,6 +20,7 @@ export default class SigninService {
        return err.response
    }
 }
+
 
 //   view = async (id) => {
 //     try {

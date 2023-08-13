@@ -14,12 +14,12 @@ const Home = () => {
             <div class="container">
                 <div class="row py-5">
 
-                    <div class="col-sm-6 col-xs-12 ">
+                    <div class="col-sm-6 col-xs-12">
                         <div class="content-view fadeInLeft main-hero-content">
-                            <h2>Mobile Massage – In Your Home, Hotel Or Office</h2>
-                            <h3 className='d-none d-sm-block'>Book professional massage therapists that come to you. Same day or in advance, 7 days a week.</h3>
+                            <h2>Mobile Massage - In Your Home, Hotel Or Office</h2>
+                            <h6 className='d-none d-sm-block'>Book professional massage therapists that come to you. Same day or in advance, 7 days a week.</h6>
                             <a href='/book' class="com-btn-view">Book Now</a>
-                            <h5 className='d-none d-sm-block'>Qualified and highly skilled providers, all carefully vetted in advance. </h5>
+                            <p className='d-none d-sm-block mt-2'>Qualified and highly skilled providers, all carefully vetted in advance. </p>
                             <h1>
                         <span> 
                              <a href="/" class="typewrite" data-period="500" data-type='["Massage on Demand","Private Yoga Classes"]'>

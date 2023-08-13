@@ -2357,7 +2357,7 @@ img.message {
 }
 
 .com-btn-view {
-  width: 200px;
+  width: 150px;
   height: 40px;
   background: #01baf2;
   display: inline-block;
@@ -4947,7 +4947,8 @@ margin-top: 20px;
   padding:15px 20px ;
   text-align: center;
   margin: 20px;
-  border-radius: 30px;
+  border-top-left-radius : 40%;
+  border-bottom-right-radius : 40%;
 }
 .tab-menu{
   display: flex;
@@ -5157,21 +5158,43 @@ margin-top: 20px;
 
 /* Style for the tab buttons */
 .tab-select , .tab-select-2 ,.tab-select-g , .tab-select-Type {
-  display: inline-block;
-  padding: 10px 20px;
+  /* display: inline-block; */
+  padding: 15px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0 5px;
+
 }
 
+.pricingTab{
+  border-radius: 4px;
+  cursor: pointer;
+}
+.pricingTab.active{
+  border: 3px solid #4BB7C3;
+  box-shadow: 10px 14px 10px rgba(203, 210, 238, 0.21);
+}
+.pricingTab input{
+  display: contents;
+}
+.pricingTab input[type="radio"]:checked + label {
+  border: 3px solid #4BB7C3;
+  box-shadow: 10px 14px 10px rgba(203, 210, 238, 0.21);
+}
 /* Style for the selected tab select */
 .tab-select.active ,  .tab-select-g.active ,.tab-select-2.active  , .tab-select-Type.active {
 border: 3px solid #4BB7C3;
   box-shadow: 10px 14px 10px rgba(203, 210, 238, 0.21);
 }
+.tab-select-2 input{
+  display: contents;
+}
+.tab-select-2 input[type="radio"]:checked + label {
+  border: 3px solid #4BB7C3;
+  box-shadow: 10px 14px 10px rgba(203, 210, 238, 0.21);
+}
 .w-full{
-  width: 100% !important;
+  width: 100%;
 }      
        
    .pricing-tab .form-details{
@@ -5188,12 +5211,17 @@ border: 3px solid #4BB7C3;
   background-color: transparent !important;
   color: #4bb7c3 !important;
   border: 1px solid #4BB7C3 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .tab-button.active{
   background-color: #4BB7C3 !important;
   color: white!important;
   border: 1px solid #4BB7C3 !important;
 }
+
 
 
 
@@ -5386,10 +5414,10 @@ border: 3px solid #4BB7C3;
 .login.signup{
   width: 75%;
 }
-.d-flex{
-display: flex !important;
+/* .d-flex{
+display: flex;
 flex-wrap: wrap;
-}
+} */
 .number-select{
   border: 0px !important;
   position: absolute;
@@ -5787,7 +5815,7 @@ width: 90%;
   padding: 15px 20px;
   text-align: center;
   margin: 4px;
-  border-radius: 30px;
+  border-top-left-radius: 30px;
   height: 100%;
 }
 .booking-form {

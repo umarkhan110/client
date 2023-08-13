@@ -15,6 +15,9 @@ import Providers from "../components/Providers";
 import PrivateRoute from "../components/PrivateRoute";
 import OrderList from "../components/admin/OrderList";
 import ViewProvider from "../components/admin/ViewProvider";
+import Booking from "./Booking";
+import PrivateForClient from "../components/PrivateForClient";
+import Massage from "./Massage";
 function Main() {
   return (
     <Router>
@@ -47,10 +50,38 @@ function Main() {
           
           </Route>
             
+          <Route path="/client-dashboard" element={<DashboardLayout />}>
+          
+          <Route path="/client-dashboard" element={
+          <PrivateRoute>
+            <Providers /> 
+          </PrivateRoute>
+          }/>
+          
+          <Route path="/client-dashboard/viewprovider/:id" element={
+          <PrivateRoute>
+            <ViewProvider /> 
+          </PrivateRoute>
+          }/>
+
+          <Route path="/client-dashboard/orderlist" element={
+          <PrivateRoute>
+            <OrderList /> 
+          </PrivateRoute>
+          }/>
+        
+        </Route>
+
           <Route path="/" element={<WebLayout />}>
             <Route path="/" element={<Home /> }/>
             <Route path="/becomeprovider" element={<BecomeProvider/> }/>
-            <Route path="/book" element={<Book/> }/>
+            <Route path="/massage/:massagetype" element={<Massage /> }/>
+
+            <Route path="/book" element={
+            <PrivateForClient>
+              <Book/> 
+            </PrivateForClient>
+            }/>
 
           </Route>
           <Route path="*" element={<NotFound />} />

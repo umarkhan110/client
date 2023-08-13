@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }) => {
   const user = localStorage.getItem("massage-token");
 //   console.log(parseJwt(user))
   if (user.exp * 1000 < Date.now()) {
-    return <Navigate to={{ pathname: "/login" }} />;
+    return <Navigate to={{ pathname: "/" }} />;
   } else {
     return children;
   }

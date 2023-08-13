@@ -50,5 +50,16 @@ export default class AdminDashboardService {
     }
   }
 
+  viewAllBooking = async () => {
+    try {
+      const config = {
+        headers: { Authorization: `${localStorage?.getItem("massage-token")}` },
+      };
+      const response = await AxiosCall.get(`/admin/showBooking`, config)
+      return response
+    } catch (error) {
+      return error.response
+    }
+  }
 
 }
