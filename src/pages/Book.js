@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Modal from 'react-modal';
-import DateCalender from "./DateCalender";
-import TimeRange from "./TimeRange";
+// import DateCalender from "./DateCalender";
+// import TimeRange from "./TimeRange";
 import { Controller, useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import Select from "react-select"
 import "react-datepicker/dist/react-datepicker.css";
 import toast from '../components/Toast';
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
 import BookingService from "../api/booking";
 import { useNavigate } from "react-router-dom";
 const customStyles = {
@@ -24,35 +24,30 @@ const customStyles = {
 
 const Book = () => {
   const bookingService = new BookingService() 
-  const [isHighlighted, setIsHighlighted] = useState(false);
   const [chooseService,setChooseService] = useState("Massage")
   const [startDate, setStartDate] = useState(new Date());
-  const [stripetoken, setStripetoken] = useState(null) 
+  // const [stripetoken, setStripetoken] = useState(null) 
 
   const navigate = useNavigate()
   const userId = localStorage.getItem("user")
-  const onToken = (token)=>{
-      setStripetoken(token)
-  }
-  useEffect(() => {
-    const makeRequest = async ()=>{
-      try {
-        const data={
-          tokenId:stripetoken.id,
-          amount:2000
-        }
-          const res = await bookingService.payment(data)
-          console.log(res)
-      } catch (error) {
-          console.log(error)
-      }
-    }
-    stripetoken && makeRequest()
-  }, [stripetoken])
-  const handleButtonClick = () => {
-    setIsHighlighted(true);
-  };
-
+  // const onToken = (token)=>{
+  //     setStripetoken(token)
+  // }
+  // useEffect(() => {
+  //   const makeRequest = async ()=>{
+  //     try {
+  //       const data={
+  //         tokenId:stripetoken.id,
+  //         amount:2000
+  //       }
+  //         const res = await bookingService.payment(data)
+  //         console.log(res)
+  //     } catch (error) {
+  //         console.log(error)
+  //     }
+  //   }
+  //   stripetoken && makeRequest()
+  // }, [stripetoken])
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -87,8 +82,6 @@ const Book = () => {
     control,
     register,
     handleSubmit,
-    formState: { errors },
-    setValue
   } = useForm();
   const submit = async (fData)=>{
 
@@ -559,7 +552,7 @@ const Book = () => {
                                 <hr></hr>
                                 <p class="text-center">No commitment</p>
                                 <div class="text-center">
-                                  <button class="com-btn-view text-center mx-auto total-money"  onClick={handleButtonClick}>Book Now</button>
+                                  <button class="com-btn-view text-center mx-auto total-money">Book Now</button>
                                 </div>
                               </div>
                             </div>

@@ -15,7 +15,6 @@ import Providers from "../components/Providers";
 import PrivateRoute from "../components/PrivateRoute";
 import OrderList from "../components/admin/OrderList";
 import ViewProvider from "../components/admin/ViewProvider";
-import Booking from "./Booking";
 import PrivateForClient from "../components/PrivateForClient";
 import Massage from "./Massage";
 function Main() {
