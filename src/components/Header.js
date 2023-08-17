@@ -30,39 +30,38 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
           <NavDropdown title="Massage" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/">In-home Massage</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Mobile Massage">Mobile Massage</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Swedish">Swedish</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Deep Tissue">Deep Tissue</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Prenatal">Prenatal</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Lymphatic">Lymphatic</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Sports">Sports</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Reflexology">Reflexology</NavDropdown.Item>
-                <NavDropdown.Item href="/massage/Couples">Couples</NavDropdown.Item>
+                <NavDropdown.Item href="/massage/Massage For Home">Massage For Home</NavDropdown.Item>
+                <NavDropdown.Item href="/massage/Massage For Office">Massage For Office</NavDropdown.Item>
+                <NavDropdown.Item href="/massage/Massage For Hotel">Massage For Hotel</NavDropdown.Item>
+                <NavDropdown.Item href="/massage/Massage For Group">Massage For Group</NavDropdown.Item>
+                <NavDropdown.Item href="/massage/Massage For Event">Massage For Event</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Services" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/">In-home Massage</NavDropdown.Item>
-                <NavDropdown.Item href="/">Mobile Massage</NavDropdown.Item>
-                <NavDropdown.Item href="/">Swedish</NavDropdown.Item>
-                <NavDropdown.Item href="/">Deep Tissue</NavDropdown.Item>
-                <NavDropdown.Item href="/">Prenatal</NavDropdown.Item>
-                <NavDropdown.Item href="/">Lymphatic</NavDropdown.Item>
-                <NavDropdown.Item href="/">Sports</NavDropdown.Item>
-                <NavDropdown.Item href="/">Reflexology</NavDropdown.Item>
-                <NavDropdown.Item href="/">Couples</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Swedish">Swedish</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Deep Tissue">Deep Tissue</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Prenatal">Prenatal</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Sports">Sports</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Reflexology">Reflexology</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Postpartum">Postpartum</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Lymphatic">Lymphatic</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Post-OP Lymphatic">Post-OP Lymphatic</NavDropdown.Item>
+                <NavDropdown.Item href="/service/Foot Massage">Foot Massage</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Pricing" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/">In-home Massage</NavDropdown.Item>
-                <NavDropdown.Item href="/">Mobile Massage</NavDropdown.Item>
-                <NavDropdown.Item href="/">Swedish</NavDropdown.Item>
-                <NavDropdown.Item href="/">Deep Tissue</NavDropdown.Item>
-                <NavDropdown.Item href="/">Prenatal</NavDropdown.Item>
-                <NavDropdown.Item href="/">Lymphatic</NavDropdown.Item>
-                <NavDropdown.Item href="/">Sports</NavDropdown.Item>
-                <NavDropdown.Item href="/">Reflexology</NavDropdown.Item>
-                <NavDropdown.Item href="/">Couples</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Swedish">Swedish</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Deep Tissue">Deep Tissue</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Prenatal">Prenatal</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Sports">Sports</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Reflexology">Reflexology</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Postpartum">Postpartum</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Lymphatic">Lymphatic</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Post-OP Lymphatic">Post-OP Lymphatic</NavDropdown.Item>
+                <NavDropdown.Item href="/price/Foot Massage">Foot Massage</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/becomeprovider" >Become a provider</Nav.Link>
+            <Nav.Link href="/" >FAQ</Nav.Link>
+            <Nav.Link href="/" >Blog</Nav.Link>
+            <Nav.Link href="/" >Contact us</Nav.Link>
           </Nav>
           <Nav>
           <Nav.Link href="/book" className='navbar-button'>Book now</Nav.Link>

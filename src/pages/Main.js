@@ -17,6 +17,8 @@ import OrderList from "../components/admin/OrderList";
 import ViewProvider from "../components/admin/ViewProvider";
 import PrivateForClient from "../components/PrivateForClient";
 import Massage from "./Massage";
+import Service from "./Services";
+import Pricing from "./Pricing";
 function Main() {
   return (
     <Router>
@@ -75,7 +77,8 @@ function Main() {
             <Route path="/" element={<Home /> }/>
             <Route path="/becomeprovider" element={<BecomeProvider/> }/>
             <Route path="/massage/:massagetype" element={<Massage /> }/>
-
+            <Route path="/service/:servicetype" element={<Service /> }/>
+            <Route path="/price/:pricetype" element={<Pricing /> }/>
             <Route path="/book" element={
             <PrivateForClient>
               <Book/> 
