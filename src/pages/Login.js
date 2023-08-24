@@ -45,7 +45,7 @@ const Login = () => {
         notify("error", resp.data.message)
       }
     } catch (error) {
-         notify("error", error)
+         console.log(error)
     }
     setLoader(false);
   };
@@ -106,7 +106,7 @@ const Login = () => {
               <ButtonLoadingSpinner ClassStyle="btn inline w-4 h-4 mr-3 align-self-center text-white spinner-border" role="status" />
             )}
             Sign in</button>
-                <a href="#!" class="forgot-password-link">Password?</a>
+                {/* <a href="#!" class="forgot-password-link">Password?</a> */}
               </div>
             </form> 
             {path === "client" ?

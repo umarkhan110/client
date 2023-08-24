@@ -4,11 +4,12 @@ import DataTable from 'react-data-table-component'
 const Table = ({
     columns,
   incomingData,
+  customStyles
 }) => {
   return (
     <div className="py-6 px-10 bg-[#FFFFFF] rounded-md"> 
       <DataTable
-      // customStyles={tableCustomStyles}
+      customStyles={customStyles}
     columns={columns}
     data={incomingData}
   /></div>

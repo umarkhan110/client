@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import SigninService from '../api/signin';
 import { useNavigate } from 'react-router-dom';
+import ToastMessage from '../components/Toast';
+import ButtonLoadingSpinner from "../components/buttonLoadingSpinner"
 
 const Signup = () => {
   const signinService = new SigninService()
   const navigate = useNavigate()
+  const [loader, setLoader] = useState(false)
+
+  const notify = React.useCallback((type, message) => {
+    ToastMessage({ type, message });
+  }, []);
   const {
     register,
     handleSubmit,
@@ -22,25 +29,15 @@ const Signup = () => {
     try {
       const resp = await signinService.signup(data);
       if (resp?.status === 200) {
+        notify("success", resp.data.message)
           navigate("/client");
       } else {
-        
-        // Swal.fire({
-        //   title: resp?.data?.message || "Something went wrong!",
-        //   timer: 1500,
-        //   icon: "error",
-        //   showConfirmButton: false,
-        // });
+        notify("error", resp.data.message)
       }
     } catch (error) {
-      // Swal.fire({
-      //   title: "Something went wrong!",
-      //   timer: 1500,
-      //   icon: "error",
-      //   showConfirmButton: false,
-      // });
+      console.log(error)
     }
-    // setLoader(false);
+    setLoader(false);
   };
   return (
 
@@ -115,7 +112,11 @@ const Signup = () => {
                        )}
               </div>
               <div class="d-flex justify-content-between align-items-center mb-5">
-                <button id="login" class="btn login-btn" type="submit">Signup</button>
+                <button id="login" class="btn login-btn" type="submit">
+                {loader && (
+                  <ButtonLoadingSpinner ClassStyle="btn inline w-4 h-4 mr-3 align-self-center text-white spinner-border" role="status" />
+                )}
+                Signup</button>
               </div>
             </form>           
             <p class="login-wrapper-footer-text">Already have an account? <a href="/client" class="text-reset">Signin here</a></p>

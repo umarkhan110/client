@@ -4,7 +4,6 @@ export default class SigninService {
 
   signup = async (body) => {
     try {
-      debugger
      const response = await AxiosCall.post(`client/signup`, body);
      return response;
    } catch (err) {

@@ -34,7 +34,6 @@ payment = async (body) => {
     }
   }
 
-
 //   updatePassword = async (id, data) => {
 //     try {
 //       const config = {

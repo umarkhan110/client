@@ -19,6 +19,7 @@ import PrivateForClient from "../components/PrivateForClient";
 import Massage from "./Massage";
 import Service from "./Services";
 import Pricing from "./Pricing";
+import ClientProfile from "../components/ClientProfile"
 function Main() {
   return (
     <Router>
@@ -65,13 +66,13 @@ function Main() {
           </PrivateRoute>
           }/>
 
-          <Route path="/client-dashboard/orderlist" element={
+          <Route path="/client-dashboard/profile" element={
           <PrivateRoute>
-            <OrderList /> 
+            <ClientProfile /> 
           </PrivateRoute>
           }/>
         
-        </Route>
+          </Route>
 
           <Route path="/" element={<WebLayout />}>
             <Route path="/" element={<Home /> }/>

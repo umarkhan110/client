@@ -3,10 +3,42 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+// import axios from "axios";
 
 const Home = () => {
+  
+  // const abc = async () => {
+  //   const config = {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   };
+  
+  //   try {
+  //     const response = await axios.post(
+  //       "http://177.71.157.205/auth/register",
+  //       {
+  //         username: "alooo12345473ksdjk",
+  //         email: "drazumar277@gmail.com",
+  //         password: "password1234",
+  //       },
+  //       config
+  //     );
+      
+  //     console.log("Response data:", response.data);
+  //   } catch (error) {
+  //     if (error.response) {
+  //       console.error("Error status:", error.response.status);
+  //       console.error("Error data:", error.response.data);
+  //     } else {
+  //       console.error("An error occurred:", error);
+  //     }
+  //   }
+  // };
+  
   return (
     <>
+    {/* <button onClick={abc}>Abc</button> */}
       <div class="wrapper">
         <div class="banner center-view">
           <div class="container">

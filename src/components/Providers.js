@@ -16,7 +16,7 @@ const Providers = () => {
           const getAllBookings = async ()=>{
             const res = await bookingService.viewbooking(id);
             if(res.status === 200){
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             }
         }
@@ -25,17 +25,31 @@ const Providers = () => {
           const getAllProvider = async ()=>{
             const res = await adminDashboardService.view();
             if(res.status === 200){
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             }
         }
         getAllProvider()
         }
       })
+      const customStyles = {
+        headRow: {
+          style: {
+            color:'#4BB7C3',
+            backgroundColor: '#e7eef0',
+            fontSize:"16px"
+          },
+        },
+        rows: {
+          style: {
+            textTransform: "capitalize"
+          }
+        }
+      }
   return (
     <>
     {role === "Client" ?
-      <Table columns={bookingcolumns(data)} incomingData={data} />
+      <Table columns={bookingcolumns(data)} incomingData={data} customStyles={customStyles}/>
       :
       <Table columns={columns(data)} incomingData={data} />
     }
